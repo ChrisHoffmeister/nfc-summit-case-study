@@ -1099,11 +1099,16 @@
       padding: 0 6vw; position: relative;
       text-align: center; background: var(--dark);
     }
+    .s13-video {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+      opacity: 0.25; pointer-events: none;
+    }
     #s13::before {
       content: ''; position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 60% 60% at 50% 50%, rgba(147,51,234,.18) 0%, transparent 55%),
-        radial-gradient(ellipse 40% 40% at 50% 80%, rgba(236,72,153,.1) 0%, transparent 60%);
+        radial-gradient(ellipse 60% 60% at 50% 50%, rgba(147,51,234,.25) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 40% at 50% 80%, rgba(236,72,153,.15) 0%, transparent 60%);
       pointer-events: none;
     }
     .s13-label {
@@ -1230,34 +1235,38 @@
       .s4-headline { font-size: clamp(2rem, 8vw, 3rem); }
       .s4-sub { font-size: .9rem; }
 
-      /* ── s5 Bracelet Marquee — Mobile GPU fix ── */
-      .s5-content { padding: 0 6vw; max-width: 100%; }
+      /* ── s5 Branded Onboarding — Mobile: statische Armband-Fotos ── */
+      #s5 { position: relative; }
+      .s5-grid { display: none; }
+      .s5-overlay { display: none; }
+      #s5::before {
+        content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 50%;
+        background: url('assets/bracelt-close.jpg') center/cover no-repeat; z-index: 0;
+      }
+      #s5::after {
+        content: ''; position: absolute; top: 50%; left: 0; right: 0; bottom: 0;
+        background: url('assets/braclets-marketing.jpg') center/cover no-repeat; z-index: 0;
+      }
+      .s5-content { position: relative; z-index: 1; padding: 0 6vw; max-width: 100%; background: rgba(7,7,15,.55); border-radius: .5rem; }
       .s5-headline { font-size: clamp(1.4rem, 5.5vw, 2rem); }
       .s5-sub { font-size: .85rem; }
-      .s5-track { will-change: auto; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
-      .s5-card { -webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0); }
-      .s5-card img { -webkit-transform: translateZ(0); transform: translateZ(0); }
-      .s5-row-1 .s5-track { animation-duration: 32s; }
-      .s5-row-2 .s5-track { animation-duration: 42s; }
 
-      /* ── s6 Before/After — zwei statische Fotos auf Mobile ── */
-      #s6 { display: block !important; }
-      .s6-panel { position: absolute; inset: auto; width: 100%; height: 50svh; overflow: hidden; }
-      .s6-panel-before { top: 0; }
-      .s6-panel-after  { top: 50svh; }
-      .s6-panel img { display: none; }
-      .s6-panel-before {
-        background: url('assets/bracelt-close.jpg') center/cover no-repeat;
-        animation: none;
-      }
-      .s6-panel-after {
-        background: url('assets/braclets-marketing.jpg') center/cover no-repeat;
-      }
-      .s6-panel-before::after, .s6-panel-after::after { display: none; }
+      /* ── s6 Before/After — Animation from empty → to filled ── */
+      #s6 { display: block !important; position: relative; height: 100svh; }
+      .s6-panel { position: absolute; inset: 0; overflow: hidden; }
+      .s6-panel img { width: 100%; height: 100%; display: block; }
+      .s6-panel-before img { object-fit: cover; object-position: center center; }
+      .s6-panel-after { background: #0a0a0a; animation: s6-reveal 1s ease-in-out 2s both; }
+      .s6-panel-after img { object-fit: contain; object-position: center center; }
       .s6-divider-line { display: none; }
       .s6-center-stat { display: none; }
-      .s6-panel-label { padding: 2vh 5vw; }
+      .s6-panel-label { padding: 2vh 5vw; position: absolute; bottom: 0; left: 0; right: 0; }
+      .s6-panel-before .s6-panel-label { animation: s6-fadeout 0.5s ease-in-out 2s both; }
+      .s6-panel-after .s6-panel-label { animation: s6-fadein 0.5s ease-in-out 2.5s both; }
       .s6-panel-word { font-size: clamp(1.6rem, 6vw, 2.4rem); }
+      @keyframes s6-reveal  { from { opacity: 0; } to { opacity: 1; } }
+      @keyframes s6-fadeout { from { opacity: 1; } to { opacity: 0; } }
+      @keyframes s6-fadein  { from { opacity: 0; } to { opacity: 1; } }
 
       /* ── s7 But Wait ── */
       #s7 { padding: 0 6vw; }
@@ -1780,6 +1789,9 @@
 
   <!-- SLIDE 13 – CTA CLOSING -->
   <section class="slide" id="s13">
+    <video class="s13-video" autoplay loop muted playsinline preload="none">
+      <source src="assets/claim-rewards.mp4" type="video/mp4" />
+    </video>
     <div class="s13-label">✦ Ready to transform your event?</div>
     <h2 class="s13-headline">Let's build your<br><span class="grad">collective moment</span><br>and monetize it.</h2>
     <p class="s13-sub">30-minute call. We'll show you exactly how it works for your event — canvas concept, merch plan, and revenue projection. No commitment.</p>
