@@ -431,8 +431,8 @@
     .s5-row-1 .s5-track { animation: mq-left  22s linear infinite; }
     .s5-row-2 .s5-track { animation: mq-right 28s linear infinite; }
 
-    @keyframes mq-left  { from { transform: translateX(0);    } to { transform: translateX(-50%); } }
-    @keyframes mq-right { from { transform: translateX(-50%); } to { transform: translateX(0);    } }
+    @keyframes mq-left  { from { transform: translate3d(0,0,0); }    to { transform: translate3d(-50%,0,0); } }
+    @keyframes mq-right { from { transform: translate3d(-50%,0,0); } to { transform: translate3d(0,0,0); } }
 
     .s5-card {
       flex-shrink: 0;
@@ -1230,10 +1230,15 @@
       .s4-headline { font-size: clamp(2rem, 8vw, 3rem); }
       .s4-sub { font-size: .9rem; }
 
-      /* ── s5 Bracelet Marquee ── */
+      /* ── s5 Bracelet Marquee — Mobile GPU fix ── */
       .s5-content { padding: 0 6vw; max-width: 100%; }
       .s5-headline { font-size: clamp(1.4rem, 5.5vw, 2rem); }
       .s5-sub { font-size: .85rem; }
+      .s5-track { will-change: auto; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+      .s5-card { -webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0); }
+      .s5-card img { -webkit-transform: translateZ(0); transform: translateZ(0); }
+      .s5-row-1 .s5-track { animation-duration: 32s; }
+      .s5-row-2 .s5-track { animation-duration: 42s; }
 
       /* ── s6 Before/After ── */
       #s6 { grid-template-columns: 1fr !important; }
