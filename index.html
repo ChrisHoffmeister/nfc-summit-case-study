@@ -1099,16 +1099,11 @@
       padding: 0 6vw; position: relative;
       text-align: center; background: var(--dark);
     }
-    .s13-video {
-      position: absolute; inset: 0; width: 100%; height: 100%;
-      object-fit: cover; object-position: center;
-      opacity: 0.25; pointer-events: none;
-    }
     #s13::before {
       content: ''; position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 60% 60% at 50% 50%, rgba(147,51,234,.25) 0%, transparent 55%),
-        radial-gradient(ellipse 40% 40% at 50% 80%, rgba(236,72,153,.15) 0%, transparent 60%);
+        radial-gradient(ellipse 60% 60% at 50% 50%, rgba(147,51,234,.18) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 40% at 50% 80%, rgba(236,72,153,.1) 0%, transparent 60%);
       pointer-events: none;
     }
     .s13-label {
@@ -1344,8 +1339,11 @@
       .spatch-stat { margin-bottom: 1rem; }
 
       /* ── s11 NFT Revenue Share ── */
-      #s11 { grid-template-columns: 1fr !important; overflow-y: auto; }
-      .s11-right { display: none; }
+      #s11 { grid-template-columns: 1fr !important; overflow-y: auto; position: relative; }
+      .s11-right { display: block !important; position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+      .s11-phone { width: 100%; height: 100%; border-radius: 0; box-shadow: none; }
+      .s11-phone video { width: 100%; height: 100%; object-fit: cover; opacity: 0.2; }
+      .s11-proof-label, .s11-nft-pills { display: none; }
       .s11-left {
         padding: max(72px, 10vh) 6vw 5vh;
         border-right: none;
@@ -1789,9 +1787,6 @@
 
   <!-- SLIDE 13 – CTA CLOSING -->
   <section class="slide" id="s13">
-    <video class="s13-video" autoplay loop muted playsinline preload="none">
-      <source src="assets/claim-rewards.mp4" type="video/mp4" />
-    </video>
     <div class="s13-label">✦ Ready to transform your event?</div>
     <h2 class="s13-headline">Let's build your<br><span class="grad">collective moment</span><br>and monetize it.</h2>
     <p class="s13-sub">30-minute call. We'll show you exactly how it works for your event — canvas concept, merch plan, and revenue projection. No commitment.</p>
