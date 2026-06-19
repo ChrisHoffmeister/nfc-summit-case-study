@@ -1831,6 +1831,18 @@
           if (!v.src && v.querySelector('source')) v.load();
           v.play().catch(() => {});
         });
+        // Restart s6 from-empty animation when slide enters view
+        if (entry.target.id === 's6') {
+          const after = entry.target.querySelector('.s6-panel-after');
+          const beforeLabel = entry.target.querySelector('.s6-panel-before .s6-panel-label');
+          const afterLabel  = entry.target.querySelector('.s6-panel-after .s6-panel-label');
+          [after, beforeLabel, afterLabel].forEach(el => {
+            if (!el) return;
+            el.style.animation = 'none';
+            el.offsetHeight; // reflow
+            el.style.animation = '';
+          });
+        }
       } else {
         videos.forEach(v => v.pause());
       }
