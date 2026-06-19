@@ -1240,10 +1240,17 @@
       .s5-row-1 .s5-track { animation-duration: 32s; }
       .s5-row-2 .s5-track { animation-duration: 42s; }
 
-      /* ── s6 Before/After ── */
-      #s6 { grid-template-columns: 1fr !important; }
-      .s6-panel-before { display: none; }
-      .s6-panel { height: 100svh; width: 100%; }
+      /* ── s6 Before/After — auto cycle ── */
+      @keyframes s6-cycle {
+        0%, 33%  { opacity: 1; }
+        50%, 83% { opacity: 0; }
+        100%     { opacity: 1; }
+      }
+      #s6 { display: block !important; }
+      .s6-panel { position: absolute; inset: 0; height: 100svh; width: 100%; display: block; }
+      .s6-panel img { object-fit: cover !important; }
+      .s6-panel-before { z-index: 2; animation: s6-cycle 6s ease-in-out infinite; }
+      .s6-panel-after  { z-index: 1; }
       .s6-divider-line { display: none; }
       .s6-center-stat { padding: 1.2rem 1.5rem; width: min(300px, 82vw); }
       .s6-center-num { font-size: clamp(2.5rem, 10vw, 4rem); }
