@@ -1144,10 +1144,19 @@
       #slide-counter { bottom: .8rem; right: 1rem; }
       #fixed-logo span { display: none; }
 
-      /* ── s1 Hero ── */
-      #s1 { grid-template-columns: 1fr !important; }
-      .hero-video-wrap { display: none; }
+      /* ── s1 Hero — video als Hintergrund ── */
+      #s1 { display: block !important; }
+      .hero-video-wrap {
+        display: block !important;
+        position: absolute; inset: 0; z-index: 0; height: 100%;
+      }
+      .hero-video-wrap::after {
+        background: linear-gradient(to bottom,
+          rgba(7,7,15,.75) 0%, rgba(7,7,15,.45) 50%, rgba(7,7,15,.8) 100%);
+      }
       .hero-left {
+        position: relative; z-index: 1;
+        background: transparent !important;
         padding: max(72px, 10vh) 6vw 6vw;
         height: 100svh;
         justify-content: flex-start;
@@ -1155,14 +1164,22 @@
       .hero-title { font-size: clamp(2.4rem, 9vw, 3.2rem); }
       .hero-sub { font-size: 1rem; margin-top: 1rem; }
 
-      /* ── sabout (3member.me) ── */
-      #sabout { grid-template-columns: 1fr !important; overflow-y: auto; }
-      .sabout-right { display: none; }
+      /* ── sabout — Foto als Hintergrund ── */
+      #sabout { display: block !important; background: transparent; overflow-y: auto; }
+      .sabout-right {
+        display: block !important;
+        position: absolute; inset: 0; z-index: 0; height: 100%;
+      }
+      .sabout-right::before {
+        background: linear-gradient(to bottom,
+          rgba(13,13,26,.92) 0%, rgba(13,13,26,.78) 50%, rgba(13,13,26,.92) 100%) !important;
+      }
       .sabout-left {
-        padding: max(72px, 10vh) 6vw 5vh;
+        position: relative; z-index: 1;
+        background: transparent !important;
         border-right: none;
-        height: auto;
-        min-height: 100svh;
+        padding: max(72px, 10vh) 6vw 5vh;
+        height: auto; min-height: 100svh;
         justify-content: flex-start;
       }
       .sabout-headline { font-size: clamp(1.3rem, 5.5vw, 1.7rem); }
@@ -1171,10 +1188,22 @@
       .sabout-card-text { font-size: .78rem; }
       .sabout-scale { margin-top: 1.5vh; font-size: .75rem; }
 
-      /* ── s2 NFC Summit ── */
-      #s2 { grid-template-columns: 1fr !important; }
-      .nfc-photo { display: none; }
-      .nfc-left { padding: max(72px, 10vh) 6vw 0; height: 100svh; justify-content: flex-start; }
+      /* ── s2 NFC Summit — Video/Bild als Hintergrund ── */
+      #s2 { display: block !important; background: transparent; }
+      .nfc-photo {
+        display: block !important;
+        position: absolute; inset: 0; z-index: 0; height: 100%;
+      }
+      .nfc-photo::before {
+        background: linear-gradient(to bottom,
+          rgba(13,13,26,.88) 0%, rgba(13,13,26,.65) 50%, rgba(13,13,26,.88) 100%) !important;
+      }
+      .nfc-left {
+        position: relative; z-index: 1;
+        background: transparent !important;
+        padding: max(72px, 10vh) 6vw 0;
+        height: 100svh; justify-content: flex-start;
+      }
       .nfc-stats { gap: 1.5rem; margin-top: 1.5rem; }
 
       /* ── s3 Canvas ── */
@@ -1182,10 +1211,22 @@
       .s3-left { height: 50svh; padding: 3vh 6vw; }
       .s3-right { height: 50svh; }
 
-      /* ── s4 Co-Creators ── */
-      #s4 { grid-template-columns: 1fr !important; }
-      .s4-right { display: none; }
-      .s4-left { padding: 0 6vw; border-right: none; height: 100svh; }
+      /* ── s4 Co-Creators — Video als Hintergrund ── */
+      #s4 { display: block !important; background: transparent; }
+      .s4-right {
+        display: block !important;
+        position: absolute; inset: 0; z-index: 0; height: 100%;
+      }
+      .s4-right::before {
+        background: linear-gradient(to bottom,
+          rgba(7,7,15,.85) 0%, rgba(7,7,15,.6) 50%, rgba(7,7,15,.85) 100%) !important;
+      }
+      .s4-left {
+        position: relative; z-index: 1;
+        background: transparent !important;
+        border-right: none;
+        padding: 0 6vw; height: 100svh;
+      }
       .s4-headline { font-size: clamp(2rem, 8vw, 3rem); }
       .s4-sub { font-size: .9rem; }
 
@@ -1210,10 +1251,22 @@
       .s7-headline { font-size: clamp(2.5rem, 10vw, 4.5rem); }
       .s7-sub { font-size: .95rem; }
 
-      /* ── s8 Merch ── */
-      #s8 { grid-template-columns: 1fr !important; }
-      .s8-right { display: none; }
-      .s8-left { padding: 0 6vw; border-right: none; height: 100svh; }
+      /* ── s8 Merch — Video als Hintergrund ── */
+      #s8 { display: block !important; background: transparent; }
+      .s8-right {
+        display: block !important;
+        position: absolute; inset: 0; z-index: 0; height: 100%;
+      }
+      .s8-right::before {
+        background: linear-gradient(to bottom,
+          rgba(7,7,15,.85) 0%, rgba(7,7,15,.6) 50%, rgba(7,7,15,.85) 100%) !important;
+      }
+      .s8-left {
+        position: relative; z-index: 1;
+        background: transparent !important;
+        border-right: none;
+        padding: 0 6vw; height: 100svh;
+      }
       .s8-headline { font-size: clamp(2rem, 8vw, 3rem); }
       .s8-sub { font-size: .9rem; }
 
@@ -1226,10 +1279,26 @@
       .s9-stat { padding: .7rem .9rem; gap: .9rem; }
       .s9-closer { font-size: clamp(.9rem, 3.5vw, 1.2rem); }
 
-      /* ── s10 Tokengated ── */
-      #s10 { grid-template-columns: 1fr !important; }
-      .s10-right { display: none; }
-      .s10-left { padding: 0 6vw; border-right: none; height: 100svh; }
+      /* ── s10 Tokengated — Bild als Hintergrund ── */
+      #s10 { display: block !important; background: var(--dark); }
+      .s10-right {
+        display: block !important;
+        position: absolute; inset: 0; z-index: 0; height: 100%;
+        padding: 0 !important; background: transparent;
+      }
+      .s10-right img {
+        width: 100%; height: 100%;
+        object-fit: cover; object-position: center top;
+        opacity: 0.2;
+        filter: none;
+      }
+      .s10-right::before { display: none; }
+      .s10-left {
+        position: relative; z-index: 1;
+        background: transparent !important;
+        border-right: none;
+        padding: 0 6vw; height: 100svh;
+      }
       .s10-headline { font-size: clamp(1.8rem, 7.5vw, 2.8rem); }
       .s10-stat-num { font-size: clamp(1.8rem, 7vw, 2.6rem); }
       .s10-sub { font-size: .9rem; }
