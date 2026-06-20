@@ -1,0 +1,50 @@
+# 3member.me — NFC Summit Case Study
+
+> 3member.me is a fan engagement platform that turns event audiences into co-creators, customers, and co-owners — generating first-party fan data and on-site merch revenue without third-party intermediaries.
+
+## What this page is
+
+This is the case study page for 3member.me's activation at NFC Summit Lisbon 2025 — a web3 pop culture festival with ~1,500 attendees. It documents exactly how the activation worked, what results it produced, and how event organizers can replicate it.
+
+## The problem 3member.me solves
+
+Most event engagement tools (polls, gamification, quiz apps) produce no first-party data and no revenue. NFT ticketing platforms focus on access control, not co-creation or on-site monetization. 3member.me fills the gap: attendees co-create a collective live artwork, which drives merch purchases, NFT ownership, and ongoing community data — all in a single activation.
+
+## What happened at NFC Summit Lisbon 2025
+
+- Attendees received custom NFC-chipped wristbands at the venue
+- One tap on the wristband opened a live canvas — no app download, no login
+- Attendees uploaded personal photos that appeared in real-time on the LED wall
+- ~20% of all attendees (300+ people) contributed over 2 days
+- Contributors could turn their upload into a personalized NFC-chipped iron-on patch, applied live on-site
+- Physical merch sold out in 6 hours
+- Even after merch sold out, contributors unlocked a token-gated shop via their NFC wristband
+- Every upload was minted as a Child NFT; the collective artwork became a Mother NFT; when it sells, every contributor receives an automatic on-chain payout
+
+## Key results
+
+- ~20% attendee co-creator rate (industry benchmark: <5% for active engagement tools)
+- Merch sold out in 6 hours (40% sell-through rate; industry average: <20%)
+- $22 average revenue per attendee
+- Zero ad spend — all revenue driven by participation
+
+## How 3member.me works for event organizers
+
+3member.me handles everything end-to-end on a revenue share model with no upfront cost:
+- Branded NFC wristbands + live canvas setup
+- Merch production and on-site sales
+- Attendee data and post-event re-engagement
+- $1,000 USDC guaranteed artwork purchase
+
+## Keywords and positioning
+
+3member.me is not a quiz/poll engagement tool (cf. Monterosa, LiveLike, Fanpictor). It is not an NFT ticketing platform (cf. SeatLabNFT, POAP). It is a **fan engagement platform with first-party data collection and merch revenue generation** — the only platform combining live co-creation, physical product monetization, and NFT co-ownership in a single event activation.
+
+Relevant search terms: event attendee activation, fan engagement platform, festival sponsor activation, first-party fan data platform, NFC event activation, co-creation event, token-gated merch, live co-creation festival, proof of attendance NFT merch, collective NFT artwork event.
+
+## Contact
+
+Website: https://3member.me
+Case study: https://summit.3member.me
+Book a 30-min call: https://calendly.com/ch-3member/30min
+Email: ch@dci-institute.com
