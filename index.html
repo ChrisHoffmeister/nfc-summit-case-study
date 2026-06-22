@@ -861,6 +861,92 @@
     }
     .s9-cta:hover { opacity: .85; }
 
+    /* ─── SLIDE SPONSOR ACTIVATION ─── */
+    #s-access {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr;
+      gap: 0; padding: 0;
+      background: var(--dark);
+    }
+    .saccess-left {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 0 5vw; position: relative; z-index: 1;
+      border-right: 1px solid var(--border);
+    }
+    .saccess-left::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 0% 50%, rgba(147,51,234,.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .saccess-badge {
+      font-size: .65rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+      color: var(--purple-l); background: rgba(147,51,234,.1); border: 1px solid rgba(147,51,234,.3);
+      padding: .28rem 1.1rem; border-radius: 999px;
+      margin-bottom: 2.5vh; width: fit-content;
+    }
+    .saccess-headline {
+      font-size: clamp(1.4rem, 2.6vw, 2.2rem);
+      font-weight: 900; line-height: 1.15; letter-spacing: -.04em;
+      color: var(--white); margin-bottom: 2.5vh;
+    }
+    .saccess-perspectives {
+      display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 3vh;
+    }
+    .saccess-perspective {
+      padding: 1.1rem 1.4rem;
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 14px;
+      background: rgba(255,255,255,.02);
+      position: relative;
+    }
+    .saccess-perspective-label {
+      font-size: .65rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      margin-bottom: .5rem;
+    }
+    .saccess-perspective-label.sponsor { color: var(--purple-l); }
+    .saccess-perspective-label.attendee { color: var(--pink); }
+    .saccess-perspective p {
+      font-size: clamp(.85rem, 1.4vw, 1rem);
+      color: var(--off); line-height: 1.55; margin: 0;
+    }
+    .saccess-scan {
+      display: flex; align-items: center; gap: .8rem;
+      padding: .8rem 1.2rem;
+      border: 1px solid rgba(34,197,94,.3);
+      border-radius: 10px;
+      background: rgba(34,197,94,.05);
+      margin-bottom: 2.5vh;
+    }
+    .saccess-scan-dot {
+      width: 12px; height: 12px; border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 10px #22c55e;
+      flex-shrink: 0;
+    }
+    .saccess-scan-text {
+      font-size: .85rem; font-weight: 700; color: #22c55e; letter-spacing: .04em;
+    }
+    .saccess-cta {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .75rem 1.8rem;
+      background: linear-gradient(135deg, var(--purple), var(--pink));
+      border-radius: 999px; font-size: .85rem; font-weight: 700; color: var(--white);
+      text-decoration: none; width: fit-content;
+      transition: opacity .2s; box-shadow: 0 0 24px rgba(147,51,234,.3);
+    }
+    .saccess-cta:hover { opacity: .85; }
+    .saccess-right {
+      position: relative; overflow: hidden; background: #000;
+    }
+    .saccess-right video {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    @media (max-width: 768px) {
+      #s-access { grid-template-columns: 1fr !important; }
+      .saccess-right { display: none; }
+      .saccess-left { border-right: none; padding: max(72px,10vh) 6vw 5vh; }
+    }
+
     /* ─── SLIDE 10 – EXCLUSIVE SHOP ─── */
     #s10 {
       display: grid !important;
@@ -1466,7 +1552,7 @@
 </a>
 
 <div id="nav-dots"></div>
-<div id="slide-counter"><span id="cur">1</span> / <span id="tot">15</span></div>
+<div id="slide-counter"><span id="cur">1</span> / <span id="tot">16</span></div>
 
 <!-- SLIDES -->
 <div id="slides">
@@ -1766,6 +1852,37 @@
       </div>
       <p class="s9-closer">Your audience wants to own their moment.<br><em>Give them the canvas — and watch them buy.</em></p>
       <a class="s9-cta" href="https://calendly.com/ch-3member/30min" target="_blank" rel="noopener">Want to bring it to your event? Book a call ↗</a>
+    </div>
+  </section>
+
+  <!-- SLIDE SPONSOR ACTIVATION -->
+  <section class="slide" id="s-access">
+    <div class="saccess-left">
+      <div class="saccess-badge">✦ Sponsor Activation</div>
+      <h2 class="saccess-headline">Give sponsors what they actually want:<br><span class="grad">guaranteed foot traffic.</span></h2>
+
+      <div class="saccess-scan">
+        <div class="saccess-scan-dot"></div>
+        <div class="saccess-scan-text">ADMITTED ✓ — Verified co-creator</div>
+      </div>
+
+      <div class="saccess-perspectives">
+        <div class="saccess-perspective">
+          <div class="saccess-perspective-label sponsor">For sponsors</div>
+          <p>Verified co-creators walk to partner stands with merch they already paid for. Every scan is a measurable redemption — no guesswork, no wasted impressions.</p>
+        </div>
+        <div class="saccess-perspective">
+          <div class="saccess-perspective-label attendee">For attendees</div>
+          <p>Their merch is more than a souvenir — it's their key to real-world rewards. That's why they wear it. That's why they want it before it sells out.</p>
+        </div>
+      </div>
+
+      <a class="saccess-cta" href="https://calendly.com/ch-3member/30min" target="_blank" rel="noopener">Want to bring it to your event? Book a call ↗</a>
+    </div>
+    <div class="saccess-right">
+      <video autoplay loop muted playsinline preload="none">
+        <source src="assets/access-reward.mp4" type="video/mp4" />
+      </video>
     </div>
   </section>
 
